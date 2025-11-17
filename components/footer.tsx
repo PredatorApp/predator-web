@@ -18,7 +18,7 @@ export function Footer() {
           <RiTwitterXFill size={16} />
         </Link>
         <Link
-          href="https://instagram.com/predator_app"
+          href="https://instagram.com/predator.app"
           target="_blank"
           rel="noopener noreferrer"
           className="p-1 text-zinc-400 hover:text-white transition-colors"
@@ -26,7 +26,7 @@ export function Footer() {
           <RiInstagramLine size={16} />
         </Link>
         <Link
-          href="https://tiktok.com/@predator_app"
+          href="https://tiktok.com/@predator.app"
           target="_blank"
           rel="noopener noreferrer"
           className="p-1 text-zinc-400 hover:text-white transition-colors"

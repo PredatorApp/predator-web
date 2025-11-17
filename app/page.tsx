@@ -68,7 +68,7 @@ export default function Home() {
               </div>
             </div>
 
-            <h1 className="mt-8 text-5xl md:text-6xl font-medium tracking-tight leading-[1.2]">
+            <h1 className="mt-8 text-5xl md:text-6xl font-medium tracking-tighter leading-[1.2]">
               Protect your family
               <br />
               from predators
