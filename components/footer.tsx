@@ -45,7 +45,9 @@ export function Footer() {
         </Link>
       </div>
 
-      <p className="mt-2 select-none">© 2025 Predator. All rights reserved.</p>
+      <p className="mt-2 select-none">
+        © 2026 Prince Technologies LLC. All rights reserved.
+      </p>
     </footer>
   );
 }
