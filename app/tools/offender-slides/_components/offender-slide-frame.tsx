@@ -218,7 +218,7 @@ const OffenderSlideFrame = forwardRef<HTMLDivElement, OffenderSlideFrameProps>(
           </div>
         </div>
 
-        <div className="absolute inset-x-[132px] bottom-[260px] border-t border-white/10 bg-black pt-[16px]">
+        <div className="absolute inset-x-[132px] bottom-[240px] border-t border-white/10 bg-black pt-[16px]">
           <div className="flex flex-col items-center justify-center">
             <div className="flex h-[140px] w-[140px] items-center justify-center overflow-hidden rounded-[30px] border border-white/20 bg-black shadow-[0_24px_80px_rgba(0,0,0,0.65)]">
               <Image
