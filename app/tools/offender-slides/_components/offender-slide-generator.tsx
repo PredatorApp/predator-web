@@ -47,6 +47,7 @@ async function captureFrame(node: HTMLDivElement) {
     backgroundColor: '#080808',
     cacheBust: true,
     height: 1920,
+    includeQueryParams: true,
     pixelRatio: 1,
     width: 1080,
   });
