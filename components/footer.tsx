@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {
+  RiDiscordFill,
   RiTwitterXFill,
   RiInstagramLine,
   RiTiktokFill,
@@ -13,6 +14,7 @@ export function Footer() {
           href="https://x.com/predator_app"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Predator on X"
           className="p-1 text-zinc-400 hover:text-white transition-colors"
         >
           <RiTwitterXFill size={16} />
@@ -21,6 +23,7 @@ export function Footer() {
           href="https://instagram.com/predator.app"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Predator on Instagram"
           className="p-1 text-zinc-400 hover:text-white transition-colors"
         >
           <RiInstagramLine size={16} />
@@ -29,9 +32,19 @@ export function Footer() {
           href="https://tiktok.com/@predator.app"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Predator on TikTok"
           className="p-1 text-zinc-400 hover:text-white transition-colors"
         >
           <RiTiktokFill size={16} />
+        </Link>
+        <Link
+          href="/discord"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Predator on Discord"
+          className="p-1 text-zinc-400 hover:text-white transition-colors"
+        >
+          <RiDiscordFill size={16} />
         </Link>
       </div>
 

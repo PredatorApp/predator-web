@@ -6,7 +6,15 @@ const nextConfig: NextConfig = {
   images: {
     domains,
   },
-  // No custom rewrites required
+  async redirects() {
+    return [
+      {
+        source: '/discord',
+        destination: 'https://discord.gg/EMd9ARMHex',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
