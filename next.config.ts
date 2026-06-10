@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
       })),
       {
         source: '/discord',
-        destination: 'https://discord.gg/EMd9ARMHex',
+        destination: 'https://discord.com/invite/EMd9ARMHex',
         permanent: false,
       },
     ];

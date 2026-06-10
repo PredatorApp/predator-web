@@ -37,15 +37,15 @@ export function Footer() {
         >
           <RiTiktokFill size={16} />
         </Link>
-        <Link
-          href="/discord"
+        <a
+          href="https://discord.com/invite/EMd9ARMHex"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Predator on Discord"
           className="p-1 text-zinc-400 hover:text-white transition-colors"
         >
           <RiDiscordFill size={16} />
-        </Link>
+        </a>
       </div>
 
       <div className="mt-1.5 flex items-center justify-center">
