@@ -7,6 +7,10 @@ const creatorRedirects = [
     source: '/nypredhunters',
     destination: 'https://predator.onelink.me/RpE0/a4iku9xx',
   },
+  {
+    source: '/catchemonlive',
+    destination: 'https://predator.onelink.me/RpE0/d8mz0963',
+  },
 ] as const;
 
 const nextConfig: NextConfig = {
