@@ -11,6 +11,10 @@ const creatorRedirects = [
     source: '/catchemonlive',
     destination: 'https://predator.onelink.me/RpE0/d8mz0963',
   },
+  {
+    source: '/highervids',
+    destination: 'https://predator.onelink.me/RpE0/heiwqqh4',
+  },
 ] as const;
 
 const nextConfig: NextConfig = {
