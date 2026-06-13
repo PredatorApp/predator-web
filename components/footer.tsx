@@ -5,6 +5,7 @@ import {
   RiInstagramLine,
   RiTiktokFill,
 } from '@remixicon/react';
+import { COMPANY_NAME, COPYRIGHT_YEAR } from '@/lib/company';
 
 export function Footer() {
   return (
@@ -59,7 +60,7 @@ export function Footer() {
       </div>
 
       <p className="mt-2 select-none">
-        © 2026 Prince Technologies LLC. All rights reserved.
+        © {COPYRIGHT_YEAR} {COMPANY_NAME}. All rights reserved.
       </p>
     </footer>
   );
