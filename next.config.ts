@@ -15,6 +15,10 @@ const creatorRedirects = [
     source: '/highervids',
     destination: 'https://predator.onelink.me/RpE0/heiwqqh4',
   },
+  {
+    source: '/huntforpreds',
+    destination: 'https://predator.onelink.me/RpE0/rexk1nss',
+  },
 ] as const;
 
 const nextConfig: NextConfig = {
