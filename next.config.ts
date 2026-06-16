@@ -7,6 +7,7 @@ const creatorPaths = [
   '/catchemonlive',
   '/highervids',
   '/huntforpreds',
+  '/pedpatrol',
 ] as const;
 
 const nextConfig: NextConfig = {
