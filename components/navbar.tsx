@@ -16,25 +16,16 @@ import {
 } from '@/components/ui/popover';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
-import { useTikTokBrowser } from '@/hooks/use-tiktok-browser';
 import { APP_STORE_URL, getStoreUrlForUserAgent } from '@/lib/store-links';
-import { isTikTokInAppBrowser } from '@/lib/tiktok-browser';
 
 const navigationLinks: { href: string; label: string; active: boolean }[] = [];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isTikTok = useTikTokBrowser();
   const [downloadHref, setDownloadHref] = useState(APP_STORE_URL);
 
   useEffect(() => {
-    const ua = navigator.userAgent;
-    if (isTikTokInAppBrowser(ua)) {
-      setDownloadHref('#download');
-      return;
-    }
-
-    setDownloadHref(getStoreUrlForUserAgent(ua));
+    setDownloadHref(getStoreUrlForUserAgent(navigator.userAgent));
   }, []);
 
   return (
@@ -134,8 +125,8 @@ export function Navbar() {
           >
             <a
               href={downloadHref}
-              target={isTikTok === true ? undefined : '_blank'}
-              rel={isTikTok === true ? undefined : 'noopener noreferrer'}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Get the app
               <ArrowRightIcon

@@ -6,6 +6,7 @@ import { Toaster } from 'sonner';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { TikTokBrowserGate } from '@/components/tiktok-browser-gate';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -42,13 +43,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <body className={`${inter.variable} bg-background font-sans antialiased`}>
-        <div className="min-h-screen max-w-6xl lg:max-w-5xl mx-auto px-4">
-          <Navbar />
-          <div className="py-4">{children}</div>
-          <div className="sticky top-[100vh] pt-32 pb-4">
-            <Footer />
+        <TikTokBrowserGate>
+          <div className="min-h-screen max-w-6xl lg:max-w-5xl mx-auto px-4">
+            <Navbar />
+            <div className="py-4">{children}</div>
+            <div className="sticky top-[100vh] pt-32 pb-4">
+              <Footer />
+            </div>
           </div>
-        </div>
+        </TikTokBrowserGate>
         <Toaster />
         <Analytics />
         <SpeedInsights />
