@@ -16,28 +16,25 @@ import {
 } from '@/components/ui/popover';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
+import { useTikTokBrowser } from '@/hooks/use-tiktok-browser';
+import { APP_STORE_URL, getStoreUrlForUserAgent } from '@/lib/store-links';
+import { isTikTokInAppBrowser } from '@/lib/tiktok-browser';
 
 const navigationLinks: { href: string; label: string; active: boolean }[] = [];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const APP_STORE_URL =
-    'https://apps.apple.com/us/app/predator-sex-offender-map/id6753127459';
-  const PLAY_STORE_URL =
-    'https://play.google.com/store/apps/details?id=app.predator';
+  const isTikTok = useTikTokBrowser();
   const [downloadHref, setDownloadHref] = useState(APP_STORE_URL);
 
   useEffect(() => {
-    try {
-      const ua =
-        typeof navigator !== 'undefined' ? navigator.userAgent || '' : '';
-      const isAndroid = /Android/i.test(ua);
-      const isIOS = /iPhone|iPad|iPod/i.test(ua);
-      if (isAndroid) setDownloadHref(PLAY_STORE_URL);
-      else if (isIOS) setDownloadHref(APP_STORE_URL);
-    } catch {
-      setDownloadHref(APP_STORE_URL);
+    const ua = navigator.userAgent;
+    if (isTikTokInAppBrowser(ua)) {
+      setDownloadHref('#download');
+      return;
     }
+
+    setDownloadHref(getStoreUrlForUserAgent(ua));
   }, []);
 
   return (
@@ -135,14 +132,18 @@ export function Navbar() {
             asChild
             className="bg-white text-black hover:bg-white/90 group rounded-full font-semibold transition-all duration-200"
           >
-            <Link href={downloadHref}>
+            <a
+              href={downloadHref}
+              target={isTikTok === true ? undefined : '_blank'}
+              rel={isTikTok === true ? undefined : 'noopener noreferrer'}
+            >
               Get the app
               <ArrowRightIcon
                 className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
                 size={16}
                 aria-hidden="true"
               />
-            </Link>
+            </a>
           </Button>
         </div>
       </div>
