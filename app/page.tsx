@@ -68,10 +68,11 @@ export default function Home() {
               </div>
             </div>
 
-            <h1 className="mt-8 text-5xl md:text-6xl font-medium tracking-tighter leading-[1.2]">
-              Protect your family
-              <br />
-              from predators
+            <h1 className="mt-8 text-[1.75rem] sm:text-5xl md:text-6xl font-medium tracking-tighter leading-[1.15]">
+              <span className="block max-sm:whitespace-nowrap">
+                Check your area
+              </span>
+              <span className="block">for predators</span>
             </h1>
             <p className="mt-4 text-white/70 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
               Search the offender registry and access information about

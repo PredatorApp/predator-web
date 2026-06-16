@@ -136,7 +136,7 @@ export function Navbar() {
             className="bg-white text-black hover:bg-white/90 group rounded-full font-semibold transition-all duration-200"
           >
             <Link href={downloadHref}>
-              Try for free
+              Get the app
               <ArrowRightIcon
                 className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
                 size={16}
