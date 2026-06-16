@@ -1,12 +1,8 @@
-'use client';
-
 import Image from 'next/image';
-import { useId } from 'react';
 import { StoreDownloadSection } from '@/components/store-download-section';
 
-function GradientStar({ size = 22 }: { size?: number }) {
-  const uid = useId();
-  const gradId = `grad-${uid}`;
+function GradientStar({ id, size = 22 }: { id: string; size?: number }) {
+  const gradId = `grad-${id}`;
   return (
     <svg
       width={size}
@@ -56,11 +52,11 @@ export default function Home() {
                     4.8
                   </span>
                   <div className="flex items-center">
-                    <GradientStar />
-                    <GradientStar />
-                    <GradientStar />
-                    <GradientStar />
-                    <GradientStar />
+                    <GradientStar id="rating-1" />
+                    <GradientStar id="rating-2" />
+                    <GradientStar id="rating-3" />
+                    <GradientStar id="rating-4" />
+                    <GradientStar id="rating-5" />
                   </div>
                 </div>
                 <span className="mt-1 text-xs font-medium tracking-widest uppercase text-transparent bg-clip-text bg-linear-to-b from-white/70 to-white/50">
@@ -76,8 +72,9 @@ export default function Home() {
               <span className="block">for predators</span>
             </h1>
             <p className="mt-4 text-white/70 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
-              Search the offender registry and access information about
-              offenders in your area. Get alerts when offenders move nearby.
+              Predator helps you stay safe and informed with a sex offender map,
+              nearby offender details, and alerts when registered offenders move
+              near you.
             </p>
 
             <StoreDownloadSection />

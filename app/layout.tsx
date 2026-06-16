@@ -7,22 +7,54 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { TikTokBrowserGate } from '@/components/tiktok-browser-gate';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
 });
 
+const siteUrl = 'https://predator.app';
+const siteTitle = 'Predator: Sex Offender Map & Alerts';
+const siteDescription =
+  'Predator helps you stay safe and informed with a sex offender map and alerts when registered offenders move near you.';
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Predator',
+    alternateName: ['Predator: Sex Offender Map', 'Predator Sex Offender Map'],
+    url: siteUrl,
+    description: siteDescription,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'Predator',
+    alternateName: 'Predator: Sex Offender Map',
+    operatingSystem: ['iOS', 'Android'],
+    applicationCategory: 'LifestyleApplication',
+    url: siteUrl,
+    description: siteDescription,
+    sameAs: [APP_STORE_URL, PLAY_STORE_URL],
+  },
+];
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://predator.app'),
-  title: 'Predator - The #1 Sex Offender Map',
-  description:
-    'Search the offender registry and access information about offenders in your area. Get alerts when offenders move nearby.',
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  applicationName: 'Predator',
+  creator: 'Prince Technologies LLC',
+  publisher: 'Prince Technologies LLC',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Predator - The #1 Sex Offender Map',
-    description:
-      'Search the offender registry and access information about offenders in your area. Get alerts when offenders move nearby.',
-    url: 'https://predator.app',
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
     siteName: 'Predator',
     images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
     locale: 'en_US',
@@ -30,9 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Predator - The #1 Sex Offender Map',
-    description:
-      'Search the offender registry and access information about offenders in your area. Get alerts when offenders move nearby.',
+    title: siteTitle,
+    description: siteDescription,
     images: ['/opengraph-image.png'],
   },
 };
@@ -43,6 +74,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <body className={`${inter.variable} bg-background font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <TikTokBrowserGate>
           <div className="min-h-screen max-w-6xl lg:max-w-5xl mx-auto px-4">
             <Navbar />
