@@ -68,7 +68,7 @@ export default function Home() {
               </div>
             </div>
 
-            <h1 className="mt-8 text-[1.75rem] sm:text-5xl md:text-6xl font-medium tracking-tighter leading-[1.15]">
+            <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl font-medium tracking-tighter leading-[1.15]">
               <span className="block max-sm:whitespace-nowrap">
                 Check your area
               </span>
