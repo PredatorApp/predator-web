@@ -2,23 +2,9 @@ import type { NextConfig } from 'next';
 
 const domains = process.env.NODE_ENV === 'development' ? ['localhost'] : [];
 
-const creatorPaths = [
-  '/nypredhunters',
-  '/catchemonlive',
-  '/highervids',
-  '/huntforpreds',
-  '/pedpatrol',
-] as const;
-
 const nextConfig: NextConfig = {
   images: {
     domains,
-  },
-  async rewrites() {
-    return creatorPaths.map((source) => ({
-      source,
-      destination: '/',
-    }));
   },
   async redirects() {
     return [
