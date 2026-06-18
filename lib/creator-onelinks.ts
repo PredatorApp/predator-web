@@ -4,6 +4,7 @@ export const CREATOR_ONELINKS = {
   '/highervids': 'https://predator.onelink.me/RpE0/heiwqqh4',
   '/catchemonlive': 'https://predator.onelink.me/RpE0/d8mz0963',
   '/nypredhunters': 'https://predator.onelink.me/RpE0/a4iku9xx',
+  '/beatingpedos': 'https://predator.onelink.me/RpE0/lk8c6yod',
 } as const;
 
 export type CreatorPath = keyof typeof CREATOR_ONELINKS;
