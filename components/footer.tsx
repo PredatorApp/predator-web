@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="text-center text-xs text-zinc-500">
       <div className="flex items-center justify-center gap-1">
         <Link
-          href="https://x.com/predator_app"
+          href="https://x.com/predatorapp"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Predator on X"
