@@ -1,27 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
 import {
-  CREATOR_ONELINKS,
-  type CreatorPath,
-} from '@/lib/creator-onelinks';
+  APPSTACK_LINKS,
+  type AppstackLinkPath,
+} from '@/lib/appstack-links';
 import { isTikTokInAppBrowser } from '@/lib/tiktok-browser';
 
-function getCreatorPath(pathname: string): CreatorPath | null {
+function getAppstackLinkPath(pathname: string): AppstackLinkPath | null {
   const normalizedPathname =
     pathname.length > 1 && pathname.endsWith('/')
       ? pathname.slice(0, -1)
       : pathname;
 
-  if (normalizedPathname in CREATOR_ONELINKS) {
-    return normalizedPathname as CreatorPath;
+  if (normalizedPathname in APPSTACK_LINKS) {
+    return normalizedPathname as AppstackLinkPath;
   }
 
   return null;
 }
 
 export function middleware(request: NextRequest) {
-  const creatorPath = getCreatorPath(request.nextUrl.pathname);
+  const appstackLinkPath = getAppstackLinkPath(request.nextUrl.pathname);
 
-  if (!creatorPath) {
+  if (!appstackLinkPath) {
     return NextResponse.next();
   }
 
@@ -31,15 +31,9 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL('/', request.url));
   }
 
-  return NextResponse.redirect(CREATOR_ONELINKS[creatorPath]);
+  return NextResponse.redirect(APPSTACK_LINKS[appstackLinkPath]);
 }
 
 export const config = {
-  matcher: [
-    '/pedpatrol/:path*',
-    '/huntforpreds/:path*',
-    '/highervids/:path*',
-    '/catchemonlive/:path*',
-    '/nypredhunters/:path*',
-  ],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)'],
 };
