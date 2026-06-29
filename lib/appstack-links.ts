@@ -5,6 +5,7 @@ export const APPSTACK_LINKS = {
   '/catchemonlive': 'https://appstack.link/U7znX4R9?media_source=Influencers&campaign_name=catchemonlive&campaign_id=48009ab5-25e5-4982-a723-aceb7059b012',
   '/nypredhunters': 'https://appstack.link/U8mJKcyy?media_source=Influencers&campaign_name=nypredhunters&campaign_id=e8c4a93b-ddb1-4380-9618-0a9535a3b52f',
   '/beatingpedos': 'https://appstack.link/NsgTJRBL?media_source=Influencers&campaign_name=beatingpedos&campaign_id=e109e31d-7911-43dd-a25b-356bd21893fb',
+  '/taquarshy': 'https://appstack.link/XIRWOnOk?media_source=Influencers&campaign_name=taquarshy&campaign_id=83105e6d-59eb-40ce-a96e-9ee9f27a7336',
   '/x': 'https://appstack.link/wuSTcrDM?media_source=Social_x&campaign_name=brand_x&campaign_id=333d22b0-6df2-4c31-86b1-224d7704e192',
 } as const;
 
