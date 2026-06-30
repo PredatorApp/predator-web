@@ -7,6 +7,7 @@ export const APPSTACK_LINKS = {
   '/beatingpedos': 'https://appstack.link/NsgTJRBL?media_source=Influencers&campaign_name=beatingpedos&campaign_id=e109e31d-7911-43dd-a25b-356bd21893fb',
   '/taquarshy': 'https://appstack.link/XIRWOnOk?media_source=Influencers&campaign_name=taquarshy&campaign_id=83105e6d-59eb-40ce-a96e-9ee9f27a7336',
   '/x': 'https://appstack.link/wuSTcrDM?media_source=Social_x&campaign_name=brand_x&campaign_id=333d22b0-6df2-4c31-86b1-224d7704e192',
+  '/ig': 'https://appstack.link/ABRa1VGw?media_source=Social_instagram&campaign_name=brand_ig&campaign_id=63f0697f-5d98-44a1-b703-d0f2f536c492'
 } as const;
 
 export type AppstackLinkPath = keyof typeof APPSTACK_LINKS;
