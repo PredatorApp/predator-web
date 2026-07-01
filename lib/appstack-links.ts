@@ -10,6 +10,7 @@ export const APPSTACK_LINKS = {
   '/fb': 'https://appstack.link/BLvxvtep?media_source=Social_facebook&campaign_name=brand_fb&campaign_id=68b886ef-4584-4db7-bea2-c4c33f1b4f6f',
   '/ig': 'https://appstack.link/ABRa1VGw?media_source=Social_instagram&campaign_name=brand_ig&campaign_id=63f0697f-5d98-44a1-b703-d0f2f536c492',
   '/threads': 'https://appstack.link/souwpqE6?media_source=Social_x&campaign_name=brand_threads&campaign_id=0913d1fb-24b0-479f-944f-7d7506625ed7',
+  '/tt': 'https://appstack.link/xPJUCp4E?media_source=Social_instagram&campaign_name=brand_tt&campaign_id=81aee626-c593-45b2-bb45-c2187ac71a3f',
   '/yt': 'https://appstack.link/jCqfItxP?media_source=Social_youtube&campaign_name=brand_yt&campaign_id=5aee23db-3e75-49b5-baa6-4c0bcd66070d'
 } as const;
 
