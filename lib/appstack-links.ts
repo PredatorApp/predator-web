@@ -7,8 +7,10 @@ export const APPSTACK_LINKS = {
   '/beatingpedos': 'https://appstack.link/NsgTJRBL?media_source=Influencers&campaign_name=beatingpedos&campaign_id=e109e31d-7911-43dd-a25b-356bd21893fb',
   '/taquarshy': 'https://appstack.link/XIRWOnOk?media_source=Influencers&campaign_name=taquarshy&campaign_id=83105e6d-59eb-40ce-a96e-9ee9f27a7336',
   '/x': 'https://appstack.link/wuSTcrDM?media_source=Social_x&campaign_name=brand_x&campaign_id=333d22b0-6df2-4c31-86b1-224d7704e192',
+  '/fb': 'https://appstack.link/BLvxvtep?media_source=Social_facebook&campaign_name=brand_fb&campaign_id=68b886ef-4584-4db7-bea2-c4c33f1b4f6f',
   '/ig': 'https://appstack.link/ABRa1VGw?media_source=Social_instagram&campaign_name=brand_ig&campaign_id=63f0697f-5d98-44a1-b703-d0f2f536c492',
-  '/threads': 'https://appstack.link/souwpqE6?media_source=Social_x&campaign_name=brand_threads&campaign_id=0913d1fb-24b0-479f-944f-7d7506625ed7'
+  '/threads': 'https://appstack.link/souwpqE6?media_source=Social_x&campaign_name=brand_threads&campaign_id=0913d1fb-24b0-479f-944f-7d7506625ed7',
+  '/yt': 'https://appstack.link/jCqfItxP?media_source=Social_youtube&campaign_name=brand_yt&campaign_id=5aee23db-3e75-49b5-baa6-4c0bcd66070d'
 } as const;
 
 export type AppstackLinkPath = keyof typeof APPSTACK_LINKS;
