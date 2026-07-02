@@ -43,12 +43,5 @@ export function ShortLinkRedirect({
     window.location.replace(redirectUrl);
   }, [redirectUrl]);
 
-  return (
-    <p className="mt-6 text-sm text-white/60">
-      Opening Predator.{' '}
-      <a className="text-white underline" href={redirectUrl}>
-        Continue if you are not redirected.
-      </a>
-    </p>
-  );
+  return null;
 }
