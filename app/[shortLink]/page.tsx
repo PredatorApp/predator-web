@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import {
@@ -80,25 +79,12 @@ export default async function ShortLinkPage({ params }: ShortLinkPageProps) {
   const destinationUrl = APPSTACK_LINKS[appstackLinkPath];
 
   return (
-    <main className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center px-4 py-20 text-center">
-      <Image
-        src="/logo.svg"
-        alt="Predator"
-        width={220}
-        height={44}
-        priority
-      />
-      <h1 className="mt-8 text-3xl font-medium tracking-tight">{title}</h1>
-      <p className="mt-3 text-base text-white/70">{description}</p>
-      <Suspense
-        fallback={
-          <p className="mt-6 text-sm text-white/60">Opening Predator.</p>
-        }
-      >
+    <main className="fixed inset-0 z-50 bg-background" aria-label={title}>
+      <Suspense fallback={null}>
         <ShortLinkRedirect destinationUrl={destinationUrl} />
       </Suspense>
       <noscript>
-        <p className="mt-6 text-sm text-white/60">
+        <p className="flex min-h-dvh items-center justify-center px-4 text-center text-sm text-white/60">
           JavaScript is required to open the tracked download link.{' '}
           <a className="text-white underline" href={destinationUrl}>
             Continue to Predator.
