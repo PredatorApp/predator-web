@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import {
-  APPSTACK_LINKS,
-  type AppstackLinkPath,
-} from '@/lib/appstack-links';
+  ONELINK_LINKS,
+  type OneLinkPath,
+} from '@/lib/onelink-links';
 import { ShortLinkRedirect } from './short-link-redirect';
 
 const title = 'Predator: Sex Offender Map & Alerts';
@@ -18,18 +18,18 @@ type ShortLinkPageProps = {
   }>;
 };
 
-function getAppstackLinkPath(shortLink: string): AppstackLinkPath | null {
+function getOneLinkPath(shortLink: string): OneLinkPath | null {
   const path = `/${shortLink}`;
 
-  if (path in APPSTACK_LINKS) {
-    return path as AppstackLinkPath;
+  if (path in ONELINK_LINKS) {
+    return path as OneLinkPath;
   }
 
   return null;
 }
 
 export function generateStaticParams() {
-  return Object.keys(APPSTACK_LINKS).map((path) => ({
+  return Object.keys(ONELINK_LINKS).map((path) => ({
     shortLink: path.slice(1),
   }));
 }
@@ -38,9 +38,9 @@ export async function generateMetadata({
   params,
 }: ShortLinkPageProps): Promise<Metadata> {
   const { shortLink } = await params;
-  const appstackLinkPath = getAppstackLinkPath(shortLink);
+  const oneLinkPath = getOneLinkPath(shortLink);
 
-  if (!appstackLinkPath) {
+  if (!oneLinkPath) {
     return {};
   }
 
@@ -49,12 +49,12 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: appstackLinkPath,
+      canonical: oneLinkPath,
     },
     openGraph: {
       title,
       description,
-      url: `${siteUrl}${appstackLinkPath}`,
+      url: `${siteUrl}${oneLinkPath}`,
       siteName: 'Predator',
       images: [{ url: cardImage, width: 1200, height: 630, alt: title }],
       type: 'website',
@@ -70,13 +70,13 @@ export async function generateMetadata({
 
 export default async function ShortLinkPage({ params }: ShortLinkPageProps) {
   const { shortLink } = await params;
-  const appstackLinkPath = getAppstackLinkPath(shortLink);
+  const oneLinkPath = getOneLinkPath(shortLink);
 
-  if (!appstackLinkPath) {
+  if (!oneLinkPath) {
     notFound();
   }
 
-  const destinationUrl = APPSTACK_LINKS[appstackLinkPath];
+  const destinationUrl = ONELINK_LINKS[oneLinkPath];
 
   return (
     <main className="fixed inset-0 z-50 bg-background" aria-label={title}>
