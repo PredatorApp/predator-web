@@ -6,6 +6,7 @@ import { Toaster } from 'sonner';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { AppsFlyerSmartScriptLoader } from '@/components/appsflyer-smart-script-loader';
 import { TikTokBrowserGate } from '@/components/tiktok-browser-gate';
 import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
@@ -78,6 +79,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <AppsFlyerSmartScriptLoader />
         <TikTokBrowserGate>
           <div className="min-h-screen max-w-6xl lg:max-w-5xl mx-auto px-4">
             <Navbar />

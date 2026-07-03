@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import {
@@ -16,17 +16,13 @@ import {
 } from '@/components/ui/popover';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
-import { APP_STORE_URL, getStoreUrlForUserAgent } from '@/lib/store-links';
+import { useAppsFlyerSmartLink } from '@/hooks/use-appsflyer-smart-link';
 
 const navigationLinks: { href: string; label: string; active: boolean }[] = [];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [downloadHref, setDownloadHref] = useState(APP_STORE_URL);
-
-  useEffect(() => {
-    setDownloadHref(getStoreUrlForUserAgent(navigator.userAgent));
-  }, []);
+  const downloadHref = useAppsFlyerSmartLink();
 
   return (
     <header className="pt-1">
