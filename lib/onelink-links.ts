@@ -13,6 +13,7 @@ export const ONELINK_LINKS = {
   '/exposedoncam': 'https://predator.onelink.me/RpE0/exposedoncam',
   '/predatorradar': 'https://predator.onelink.me/RpE0/predatorradar',
   '/thecatchnetwork': 'https://predator.onelink.me/RpE0/thecatchnetwork',
+  '/pedofinder': 'https://predator.onelink.me/RpE0/pedofinder',
   '/pp': 'https://predator.onelink.me/RpE0/pp',
   '/x': 'https://predator.onelink.me/RpE0/x',
   '/fb': 'https://predator.onelink.me/RpE0/fb',
