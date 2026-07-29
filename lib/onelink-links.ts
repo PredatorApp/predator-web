@@ -1,7 +1,7 @@
 export const ONELINK_LINKS = {
   '/pedpatrol': 'https://predator.onelink.me/RpE0/pedpatrol',
   '/nypredhunters': 'https://predator.onelink.me/RpE0/nypredhunters',
-  '/beatingpedos': 'https://predator.onelink.me/RpE0/beatingpedos',
+  '/btp': 'https://predator.onelink.me/RpE0/btp',
   '/taquarshy': 'https://predator.onelink.me/RpE0/taquarshy',
   '/decoyfiles': 'https://predator.onelink.me/RpE0/decoyfiles',
   '/benzo': 'https://predator.onelink.me/RpE0/benzo',
