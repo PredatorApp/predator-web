@@ -1,10 +1,6 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
-import {
-  ONELINK_LINKS,
-  type OneLinkPath,
-} from '@/lib/onelink-links';
+import { getOneLinkUrl } from '@/lib/onelink-links';
 import { ShortLinkRedirect } from './short-link-redirect';
 
 const title = 'Predator: Sex Offender Map & Alerts';
@@ -18,43 +14,23 @@ type ShortLinkPageProps = {
   }>;
 };
 
-function getOneLinkPath(shortLink: string): OneLinkPath | null {
-  const path = `/${shortLink}`;
-
-  if (path in ONELINK_LINKS) {
-    return path as OneLinkPath;
-  }
-
-  return null;
-}
-
-export function generateStaticParams() {
-  return Object.keys(ONELINK_LINKS).map((path) => ({
-    shortLink: path.slice(1),
-  }));
-}
-
 export async function generateMetadata({
   params,
 }: ShortLinkPageProps): Promise<Metadata> {
   const { shortLink } = await params;
-  const oneLinkPath = getOneLinkPath(shortLink);
-
-  if (!oneLinkPath) {
-    return {};
-  }
+  const path = `/${shortLink}`;
 
   return {
     metadataBase: new URL(siteUrl),
     title,
     description,
     alternates: {
-      canonical: oneLinkPath,
+      canonical: path,
     },
     openGraph: {
       title,
       description,
-      url: `${siteUrl}${oneLinkPath}`,
+      url: `${siteUrl}${path}`,
       siteName: 'Predator',
       images: [{ url: cardImage, width: 1200, height: 630, alt: title }],
       type: 'website',
@@ -70,13 +46,7 @@ export async function generateMetadata({
 
 export default async function ShortLinkPage({ params }: ShortLinkPageProps) {
   const { shortLink } = await params;
-  const oneLinkPath = getOneLinkPath(shortLink);
-
-  if (!oneLinkPath) {
-    notFound();
-  }
-
-  const destinationUrl = ONELINK_LINKS[oneLinkPath];
+  const destinationUrl = getOneLinkUrl(shortLink);
 
   return (
     <main className="fixed inset-0 z-50 bg-background" aria-label={title}>

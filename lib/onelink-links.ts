@@ -1,18 +1,5 @@
-export const ONELINK_LINKS = {
-  '/pedpatrol': 'https://predator.onelink.me/RpE0/pedpatrol',
-  '/nypredhunters': 'https://predator.onelink.me/RpE0/nypredhunters',
-  '/btp': 'https://predator.onelink.me/RpE0/btp',
-  '/taquarshy': 'https://predator.onelink.me/RpE0/taquarshy',
-  '/decoyfiles': 'https://predator.onelink.me/RpE0/decoyfiles',
-  '/benzo': 'https://predator.onelink.me/RpE0/benzo',
-  '/offender': 'https://predator.onelink.me/RpE0/offender',
-  '/pp': 'https://predator.onelink.me/RpE0/pp',
-  '/x': 'https://predator.onelink.me/RpE0/x',
-  '/fb': 'https://predator.onelink.me/RpE0/fb',
-  '/ig': 'https://predator.onelink.me/RpE0/ig',
-  '/threads': 'https://predator.onelink.me/RpE0/threads',
-  '/tt': 'https://predator.onelink.me/RpE0/tt',
-  '/yt': 'https://predator.onelink.me/RpE0/yt',
-} as const;
+const ONELINK_BASE = 'https://predator.onelink.me/RpE0';
 
-export type OneLinkPath = keyof typeof ONELINK_LINKS;
+export function getOneLinkUrl(slug: string): string {
+  return `${ONELINK_BASE}/${slug}`;
+}
