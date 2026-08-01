@@ -6,6 +6,15 @@ import {
   APPSFLYER_SMART_SCRIPT_READY_EVENT,
   generateAppsFlyerOneLinkURL,
 } from '@/lib/appsflyer-smart-script';
+import { buildGoHandoffPath, isMetaInAppBrowser } from '@/lib/in-app-browser';
+
+function resolveDownloadHref(oneLinkUrl: string): string {
+  if (typeof navigator !== 'undefined' && isMetaInAppBrowser(navigator.userAgent)) {
+    return buildGoHandoffPath(oneLinkUrl);
+  }
+
+  return oneLinkUrl;
+}
 
 export function useAppsFlyerSmartLink(
   fallbackUrl = APPSFLYER_DEFAULT_ONELINK_URL,
@@ -13,14 +22,9 @@ export function useAppsFlyerSmartLink(
   const [href, setHref] = useState(fallbackUrl);
 
   useEffect(() => {
-    setHref(fallbackUrl);
-
     function updateHref() {
-      const appsFlyerUrl = generateAppsFlyerOneLinkURL();
-
-      if (appsFlyerUrl) {
-        setHref(appsFlyerUrl);
-      }
+      const appsFlyerUrl = generateAppsFlyerOneLinkURL() ?? fallbackUrl;
+      setHref(resolveDownloadHref(appsFlyerUrl));
     }
 
     updateHref();

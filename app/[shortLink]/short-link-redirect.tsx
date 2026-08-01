@@ -1,8 +1,12 @@
 'use client';
 
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { isTikTokInAppBrowser } from '@/lib/tiktok-browser';
+import { StoreHandoff } from '@/components/store-handoff';
+import {
+  detectInAppBrowser,
+  isTikTokInAppBrowser,
+} from '@/lib/in-app-browser';
 
 function buildRedirectUrl(
   destinationUrl: string,
@@ -34,14 +38,26 @@ export function ShortLinkRedirect({
       ),
     [destinationUrl, searchParams],
   );
+  const [isMeta, setIsMeta] = useState(false);
 
   useEffect(() => {
+    const info = detectInAppBrowser(navigator.userAgent);
+
+    if (info.family === 'meta') {
+      setIsMeta(true);
+      return;
+    }
+
     if (isTikTokInAppBrowser(navigator.userAgent)) {
       return;
     }
 
     window.location.replace(redirectUrl);
   }, [redirectUrl]);
+
+  if (isMeta) {
+    return <StoreHandoff destinationUrl={redirectUrl} />;
+  }
 
   return null;
 }

@@ -1,14 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { isTikTokInAppBrowser } from '@/lib/tiktok-browser';
+import { useInAppBrowser } from '@/hooks/use-in-app-browser';
 
 export function useTikTokBrowser(): boolean | null {
-  const [isTikTok, setIsTikTok] = useState<boolean | null>(null);
+  const info = useInAppBrowser();
 
-  useEffect(() => {
-    setIsTikTok(isTikTokInAppBrowser(navigator.userAgent));
-  }, []);
+  if (info === null) {
+    return null;
+  }
 
-  return isTikTok;
+  return info.family === 'tiktok';
 }

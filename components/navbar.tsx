@@ -23,6 +23,7 @@ const navigationLinks: { href: string; label: string; active: boolean }[] = [];
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const downloadHref = useAppsFlyerSmartLink();
+  const isHandoffLink = downloadHref.startsWith('/go');
 
   return (
     <header className="pt-1">
@@ -121,8 +122,9 @@ export function Navbar() {
           >
             <a
               href={downloadHref}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(isHandoffLink
+                ? {}
+                : { target: '_blank', rel: 'noopener noreferrer' })}
             >
               Get the app
               <ArrowRightIcon

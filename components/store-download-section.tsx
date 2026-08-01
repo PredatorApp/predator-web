@@ -5,14 +5,17 @@ import { useAppsFlyerSmartLink } from '@/hooks/use-appsflyer-smart-link';
 
 export function StoreDownloadSection() {
   const smartLinkHref = useAppsFlyerSmartLink();
+  const isHandoffLink = smartLinkHref.startsWith('/go');
+  const externalLinkProps = isHandoffLink
+    ? {}
+    : { target: '_blank' as const, rel: 'noopener noreferrer' };
 
   return (
     <div id="download" className="mt-6">
       <div className="flex flex-row gap-2 md:gap-1 items-center justify-center lg:justify-start">
         <a
           href={smartLinkHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...externalLinkProps}
           className="transition-transform hover:scale-[1.03]"
         >
           <Image
@@ -26,8 +29,7 @@ export function StoreDownloadSection() {
         </a>
         <a
           href={smartLinkHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...externalLinkProps}
           className="transition-transform hover:scale-[1.03]"
         >
           <Image
