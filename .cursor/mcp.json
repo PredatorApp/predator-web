@@ -2,61 +2,30 @@
   "mcpServers": {
     "linear-predator": {
       "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://mcp.linear.app/mcp",
-        "22227"
-      ],
+      "args": ["-y", "mcp-remote", "https://mcp.linear.app/mcp", "22305"],
       "env": {
         "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/linear-predator"
       }
     },
     "notion-predator": {
       "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://mcp.notion.com/mcp",
-        "22233"
-      ],
+      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp", "22306"],
       "env": {
         "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/notion-predator"
       }
     },
     "revenuecat-predator": {
       "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://mcp.revenuecat.ai/mcp",
-        "22235"
-      ],
+      "args": ["-y", "mcp-remote", "https://mcp.revenuecat.ai/mcp", "22307"],
       "env": {
         "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/revenuecat-predator"
       }
     },
-    "aws-predator": {
-      "command": "uvx",
-      "args": [
-        "mcp-proxy-for-aws@latest",
-        "https://aws-mcp.us-east-1.api.aws/mcp",
-        "--profile",
-        "AdministratorAccess-225647925102",
-        "--metadata",
-        "INSTALL_SOURCE=aws-cli"
-      ]
-    },
-    "customerio-predator": {
+    "posthog-predator": {
       "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://mcp.customer.io/mcp",
-        "22239"
-      ],
+      "args": ["-y", "mcp-remote", "https://mcp.posthog.com/mcp", "22308"],
       "env": {
-        "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/customerio-predator"
+        "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/posthog-predator"
       }
     }
   }
