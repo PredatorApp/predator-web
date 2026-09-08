@@ -1,21 +1,14 @@
-'use client';
-
 import Image from 'next/image';
-import { useAppsFlyerSmartLink } from '@/hooks/use-appsflyer-smart-link';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 export function StoreDownloadSection() {
-  const smartLinkHref = useAppsFlyerSmartLink();
-  const isHandoffLink = smartLinkHref.startsWith('/go');
-  const externalLinkProps = isHandoffLink
-    ? {}
-    : { target: '_blank' as const, rel: 'noopener noreferrer' };
-
   return (
     <div id="download" className="mt-6">
       <div className="flex flex-row gap-2 md:gap-1 items-center justify-center lg:justify-start">
         <a
-          href={smartLinkHref}
-          {...externalLinkProps}
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="transition-transform hover:scale-[1.03]"
         >
           <Image
@@ -28,8 +21,9 @@ export function StoreDownloadSection() {
           />
         </a>
         <a
-          href={smartLinkHref}
-          {...externalLinkProps}
+          href={PLAY_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="transition-transform hover:scale-[1.03]"
         >
           <Image

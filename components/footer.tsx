@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import {
-  RiDiscordFill,
   RiTwitterXFill,
   RiInstagramLine,
   RiTiktokFill,
+  RiFacebookFill,
 } from '@remixicon/react';
 import { COMPANY_NAME, COPYRIGHT_YEAR } from '@/lib/company';
 
@@ -38,15 +38,15 @@ export function Footer() {
         >
           <RiTiktokFill size={16} />
         </Link>
-        <a
-          href="https://discord.com/invite/EMd9ARMHex"
+        <Link
+          href="https://www.facebook.com/predator.app"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Predator on Discord"
+          aria-label="Predator on Facebook"
           className="p-1 text-zinc-400 hover:text-white transition-colors"
         >
-          <RiDiscordFill size={16} />
-        </a>
+          <RiFacebookFill size={16} />
+        </Link>
       </div>
 
       <div className="mt-1.5 flex items-center justify-center">
