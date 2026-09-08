@@ -27,6 +27,13 @@
       "env": {
         "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/posthog-predator"
       }
+    },
+    "vercel-predator": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.vercel.com", "22309"],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/vercel-predator"
+      }
     }
   }
 }

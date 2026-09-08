@@ -49,7 +49,7 @@ export default function Home() {
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="flex items-center gap-2">
                   <span className="text-lg font-medium text-transparent bg-clip-text bg-linear-to-b from-white to-white/80">
-                    4.8
+                    4.6
                   </span>
                   <div className="flex items-center">
                     <GradientStar id="rating-1" />

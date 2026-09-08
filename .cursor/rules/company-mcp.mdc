@@ -3,4 +3,4 @@ description: This repo is Predator — use Predator MCP servers only.
 alwaysApply: true
 ---
 
-This repo is Predator. Use `linear-predator`, `notion-predator`, `revenuecat-predator`, and `posthog-predator` when present. Never use Cozy, Prince, or Dead MCP servers or switch those tools to another company's org.
+This repo is Predator. Use `linear-predator`, `notion-predator`, `revenuecat-predator`, `posthog-predator`, and `vercel-predator` when present. Never use Cozy, Prince, or Dead MCP servers or switch those tools to another company's org.
