@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { BrandLogo } from '@/components/brand-logo';
 import { MetaEscapeFallback } from '@/components/meta-escape-fallback';
 import { Button } from '@/components/ui/button';
 import { useInAppBrowser } from '@/hooks/use-in-app-browser';
@@ -119,14 +119,7 @@ export function StoreHandoff({
   return (
     <main className="fixed inset-0 z-50 flex min-h-dvh items-center justify-center bg-background px-6 text-foreground">
       <section className="w-full max-w-sm text-center">
-        <Image
-          src="/logo.svg"
-          alt="Predator"
-          width={120}
-          height={24}
-          className="mx-auto h-auto w-30"
-          preload
-        />
+        <BrandLogo width={120} className="mx-auto" preload />
         <h1 className="mt-6 text-3xl font-medium tracking-tight text-foreground">
           Get Predator
         </h1>

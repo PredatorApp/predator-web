@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowRightIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { BrandLogo } from '@/components/brand-logo';
 import { useAppsFlyerSmartLink } from '@/hooks/use-appsflyer-smart-link';
 
 export function Navbar() {
@@ -12,14 +12,11 @@ export function Navbar() {
 
   return (
     <header className="site-header flex h-20 items-center justify-between gap-4">
-      <Link href="/" className="rounded-xl transition-opacity hover:opacity-80">
-        <Image
-          src="/logo.svg"
-          alt="Predator"
-          width={80}
-          height={16}
-          className="h-auto w-20"
-        />
+      <Link
+        href="/"
+        className="rounded-xl mix-blend-screen transition-opacity hover:opacity-80"
+      >
+        <BrandLogo width={80} />
       </Link>
       <Button
         nativeButton={false}

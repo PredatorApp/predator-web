@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     url: siteUrl,
     siteName: 'Predator',
-    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image.png', width: 2400, height: 1260 }],
     locale: 'en_US',
     type: 'website',
   },

@@ -33,7 +33,7 @@ export async function generateMetadata({
       description,
       url: `${siteUrl}${path}`,
       siteName: 'Predator',
-      images: [{ url: cardImage, width: 1200, height: 630, alt: title }],
+      images: [{ url: cardImage, width: 2400, height: 1260, alt: title }],
       type: 'website',
     },
     twitter: {
