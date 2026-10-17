@@ -5,7 +5,6 @@ import { Footer } from '@/components/footer';
 import './globals.css';
 import '@/components/legal/legal.css';
 import { OptionalWebsiteServices } from '@/components/optional-website-services';
-import { WebsitePrivacyNotice } from '@/components/website-privacy-notice';
 import { TikTokBrowserGate } from '@/components/tiktok-browser-gate';
 import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
@@ -86,7 +85,6 @@ export default function RootLayout({
           </div>
         </TikTokBrowserGate>
         <OptionalWebsiteServices />
-        <WebsitePrivacyNotice />
       </body>
     </html>
   );

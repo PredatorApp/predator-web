@@ -73,18 +73,20 @@ export default function Home() {
               <span className="block">for predators</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg lg:mx-0">
-              Explore public sex offender records near you.
+              Predator helps you stay safe and informed with a sex offender map,
+              nearby offender details, and alerts when registered offenders move
+              near you.
             </p>
 
             <StoreDownloadSection />
           </div>
 
-          <div className="flex-none">
+          <div className="max-w-full flex-none">
             <div className="mt-12 lg:mx-0">
               <Image
                 src={appMapScreenshot}
                 alt="Predator app map and nearby registry results"
-                className="h-auto w-[280px]"
+                className="h-auto w-[320px] max-w-full lg:w-[340px]"
                 preload
                 unoptimized
               />

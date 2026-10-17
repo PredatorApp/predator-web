@@ -53,8 +53,9 @@ export function WebsitePrivacyNotice() {
       >
         <div>
           <p>
-            Allow website analytics and download attribution?{' '}
-            <Link href="/privacy/choices">Manage choices</Link>
+            We use cookies and similar technologies to improve your experience
+            and measure website and marketing performance.{' '}
+            <Link href="/privacy/choices">Manage preferences</Link>
           </p>
         </div>
         <div className="website-privacy-notice-actions">
@@ -64,7 +65,7 @@ export function WebsitePrivacyNotice() {
               saveWebsitePrivacy({ analytics: false, attribution: false })
             }
           >
-            Keep off
+            Reject all
           </Button>
           <Button
             variant="secondary"
@@ -72,7 +73,7 @@ export function WebsitePrivacyNotice() {
               saveWebsitePrivacy({ analytics: true, attribution: true })
             }
           >
-            Allow
+            Accept all
           </Button>
         </div>
       </section>

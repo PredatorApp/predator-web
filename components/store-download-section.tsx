@@ -10,7 +10,7 @@ export function StoreDownloadSection() {
           nativeButton={false}
           role="link"
           variant="ghost"
-          className="h-auto rounded-lg p-0 hover:bg-transparent"
+          className="h-auto rounded-lg p-0 transition-transform hover:scale-[1.03] hover:bg-transparent"
           render={
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" />
           }
@@ -24,28 +24,20 @@ export function StoreDownloadSection() {
             preload
           />
         </Button>
-        <Button
-          nativeButton={false}
-          role="link"
-          variant="ghost"
-          className="h-auto rounded-lg p-0 hover:bg-transparent"
-          render={
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            />
-          }
+        <a
+          href={PLAY_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:scale-[1.03]"
         >
           <Image
             src="/google-play-badge.png"
             alt="Get it on Google Play"
-            width={646}
-            height={250}
-            sizes="181px"
-            className="h-auto w-[181px]"
+            width={210}
+            height={63}
+            className="h-[70px] w-auto"
           />
-        </Button>
+        </a>
       </div>
     </div>
   );
