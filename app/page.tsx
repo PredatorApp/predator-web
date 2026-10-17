@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { StoreDownloadSection } from '@/components/store-download-section';
+import appMapScreenshot from '@/public/app-map-screenshot@3x.png';
 
 function GradientStar({ id, size = 22 }: { id: string; size?: number }) {
   const gradId = `grad-${id}`;
@@ -36,20 +37,20 @@ export default function Home() {
   return (
     <main className="w-full">
       <div className="mx-auto max-w-6xl lg:max-w-5xl">
-        <section className="mt-20 px-3 md:px-5 flex flex-col lg:flex-row items-center gap-10">
+        <section className="mt-12 flex flex-col items-center gap-10 lg:mt-20 lg:flex-row">
           <div className="text-center lg:text-left flex-1 min-w-0">
-            <div className="flex items-center justify-center lg:justify-start gap-8 md:gap-10">
+            <div className="flex items-center justify-center gap-5 sm:gap-8 lg:justify-start">
               <Image
                 src="/app-of-the-day.svg"
                 alt="App of the Day"
-                width={150}
-                height={50}
-                className="lg:mx-0"
+                width={146}
+                height={58}
+                className="h-auto w-28 sm:w-[150px] lg:mx-0"
               />
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="flex items-center gap-2">
-                  <span className="text-lg font-medium text-transparent bg-clip-text bg-linear-to-b from-white to-white/80">
-                    4.6
+                  <span className="text-lg font-medium text-foreground">
+                    4.5
                   </span>
                   <div className="flex items-center">
                     <GradientStar id="rating-1" />
@@ -59,8 +60,8 @@ export default function Home() {
                     <GradientStar id="rating-5" />
                   </div>
                 </div>
-                <span className="mt-1 text-xs font-medium tracking-widest uppercase text-transparent bg-clip-text bg-linear-to-b from-white/70 to-white/50">
-                  1,000+ APP RATINGS
+                <span className="mt-1 text-xs font-medium tracking-wider text-muted-foreground">
+                  4,000+ APP RATINGS
                 </span>
               </div>
             </div>
@@ -71,10 +72,8 @@ export default function Home() {
               </span>
               <span className="block">for predators</span>
             </h1>
-            <p className="mt-4 text-white/70 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
-              Predator helps you stay safe and informed with a sex offender map,
-              nearby offender details, and alerts when registered offenders move
-              near you.
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg lg:mx-0">
+              Explore public sex offender records near you.
             </p>
 
             <StoreDownloadSection />
@@ -83,11 +82,11 @@ export default function Home() {
           <div className="flex-none">
             <div className="mt-12 lg:mx-0">
               <Image
-                src="/offender-alert.png"
-                alt="Predator app screenshot"
-                width={280}
-                height={100}
-                priority
+                src={appMapScreenshot}
+                alt="Predator app map and nearby registry results"
+                className="h-auto w-[280px]"
+                preload
+                unoptimized
               />
             </div>
           </div>

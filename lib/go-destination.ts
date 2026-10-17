@@ -8,7 +8,7 @@ const ALLOWED_DESTINATION_HOSTS = new Set([
 
 export function resolveGoDestination(
   to: string | null | undefined,
-  fallback: string = APPSFLYER_DEFAULT_ONELINK_URL,
+  fallback: string = APPSFLYER_DEFAULT_ONELINK_URL
 ): string {
   if (!to) {
     return fallback;

@@ -1,11 +1,7 @@
 export type InAppBrowserFamily = 'tiktok' | 'meta';
 
 export type InAppBrowserApp =
-  | 'tiktok'
-  | 'instagram'
-  | 'threads'
-  | 'facebook'
-  | 'messenger';
+  'tiktok' | 'instagram' | 'threads' | 'facebook' | 'messenger';
 
 export type InAppBrowserOs = 'ios' | 'android' | 'other';
 
@@ -15,8 +11,7 @@ export type InAppBrowserInfo = {
   os: InAppBrowserOs;
 };
 
-const TIKTOK_UA_PATTERN =
-  /TikTok|BytedanceWebview|musical_ly|Bytedance/i;
+const TIKTOK_UA_PATTERN = /TikTok|BytedanceWebview|musical_ly|Bytedance/i;
 
 function detectOs(userAgent: string): InAppBrowserOs {
   if (/iPhone|iPad|iPod/i.test(userAgent)) {

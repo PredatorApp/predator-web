@@ -35,19 +35,13 @@ export function MetaEscapeFallback({
       </p>
 
       <div className="flex flex-col gap-3 sm:flex-row">
-        <Button
-          type="button"
-          size="lg"
-          className="h-12 flex-1 text-base"
-          onClick={onRetry}
-        >
+        <Button type="button" className="flex-1" onClick={onRetry}>
           Retry
         </Button>
         <Button
           type="button"
-          size="lg"
-          variant="outline"
-          className="h-12 flex-1 text-base"
+          variant="secondary"
+          className="flex-1"
           onClick={handleCopy}
         >
           {copied ? 'Copied' : 'Copy link'}

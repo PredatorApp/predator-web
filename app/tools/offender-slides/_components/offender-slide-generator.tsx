@@ -4,11 +4,14 @@ import { toPng } from 'html-to-image';
 import JSZip from 'jszip';
 import type { FormEvent } from 'react';
 import { useMemo, useRef, useState, useTransition } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import {
   generateOffenderSlides,
   type GenerateOffenderSlidesResult,
 } from '../actions';
-import OffenderSlideFrame from './offender-slide-frame';
+import { OffenderSlidePreview } from './offender-slide-preview';
 
 const DEFAULT_COUNT = 20;
 const DEFAULT_RADIUS = 50;
@@ -43,6 +46,7 @@ function getPngFilename(locationSlug: string, index: number) {
 }
 
 async function captureFrame(node: HTMLDivElement) {
+  await document.fonts.ready;
   return toPng(node, {
     backgroundColor: '#080808',
     cacheBust: true,
@@ -66,6 +70,7 @@ export default function OffenderSlideGenerator() {
   );
   const [exportingId, setExportingId] = useState<string | null>(null);
   const [bulkExporting, setBulkExporting] = useState(false);
+  const [exportError, setExportError] = useState('');
   const [isPending, startTransition] = useTransition();
   const frameRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -78,15 +83,21 @@ export default function OffenderSlideGenerator() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    startTransition(() => {
-      void (async () => {
+    setExportError('');
+    startTransition(async () => {
+      try {
         const nextResult = await generateOffenderSlides({
           location,
           count,
           radius,
         });
         setResult(nextResult);
-      })();
+      } catch {
+        setResult({
+          success: false,
+          error: 'Could not load slides. Please try again.',
+        });
+      }
     });
   }
 
@@ -99,11 +110,15 @@ export default function OffenderSlideGenerator() {
     if (!node) return;
 
     if (!options?.bulk) {
+      setExportError('');
       setExportingId(offenderId);
     }
     try {
       const dataUrl = await captureFrame(node);
       downloadDataUrl(dataUrl, getPngFilename(locationSlug, index));
+    } catch (error) {
+      console.error('Slide export failed', error);
+      setExportError('Could not export this slide. Please try again.');
     } finally {
       if (!options?.bulk) {
         setExportingId(null);
@@ -112,6 +127,7 @@ export default function OffenderSlideGenerator() {
   }
 
   async function exportAllFrames() {
+    setExportError('');
     const zip = new JSZip();
 
     for (let index = 0; index < offenders.length; index += 1) {
@@ -119,7 +135,7 @@ export default function OffenderSlideGenerator() {
       if (!offender) continue;
 
       const node = frameRefs.current[offender.id];
-      if (!node) continue;
+      if (!node) throw new Error('A slide is not ready for export.');
 
       const dataUrl = await captureFrame(node);
       zip.file(getPngFilename(locationSlug, index), dataUrlToBase64(dataUrl), {
@@ -134,119 +150,182 @@ export default function OffenderSlideGenerator() {
   const isExporting = Boolean(exportingId) || bulkExporting;
 
   return (
-    <main className="mx-auto w-full max-w-7xl px-4 py-8 text-white">
-      <div className="grid gap-8 lg:grid-cols-[360px_1fr]">
-        <aside className="h-fit rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/30 lg:sticky lg:top-6">
+    <main className="w-full py-8 text-foreground">
+      <div className="grid gap-12 lg:grid-cols-[17rem_minmax(0,1fr)]">
+        <aside className="h-fit lg:sticky lg:top-6">
           <div>
-            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-white/45">
-              Internal Tool
-            </div>
-            <h1 className="mt-2 text-3xl font-semibold tracking-[-0.06em]">
+            <h1 className="text-3xl font-medium tracking-tight">
               Offender slide generator
             </h1>
-            <p className="mt-3 text-sm leading-6 text-white/55">
-              Generate address-safe 9:16 screenshots from the production
-              offender API. Street addresses and zip codes are never rendered.
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              Create 9:16 slides without street addresses or ZIP codes.
             </p>
           </div>
 
-          <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
-            <label className="block">
-              <span className="text-sm font-medium text-white/70">
-                Location
-              </span>
-              <input
+          <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+            <Label className="block">
+              <span className="text-sm font-medium">Location</span>
+              <Input
+                required
+                maxLength={200}
+                aria-describedby="slide-location-help"
+                disabled={isPending || isExporting}
                 value={location}
                 onChange={(event) => setLocation(event.target.value)}
                 placeholder="Austin, TX or 30.2672, -97.7431"
-                className="mt-2 h-11 w-full rounded-2xl border border-white/10 bg-black/30 px-4 text-sm text-white outline-none transition focus:border-white/35"
+                className="mt-2"
               />
-            </label>
+            </Label>
 
             <div className="grid grid-cols-2 gap-3">
-              <label className="block">
-                <span className="text-sm font-medium text-white/70">
-                  Count
-                </span>
-                <input
+              <Label className="block">
+                <span className="text-sm font-medium">Count</span>
+                <Input
+                  required
+                  disabled={isPending || isExporting}
                   type="number"
                   min={1}
                   max={100}
                   value={count}
                   onChange={(event) => setCount(Number(event.target.value))}
-                  className="mt-2 h-11 w-full rounded-2xl border border-white/10 bg-black/30 px-4 text-sm text-white outline-none transition focus:border-white/35"
+                  className="mt-2"
                 />
-              </label>
+              </Label>
 
-              <label className="block">
-                <span className="text-sm font-medium text-white/70">
-                  Radius mi
-                </span>
-                <input
+              <Label className="block">
+                <span className="text-sm font-medium">Radius mi</span>
+                <Input
+                  required
+                  disabled={isPending || isExporting}
                   type="number"
                   min={1}
                   max={50}
                   value={radius}
                   onChange={(event) => setRadius(Number(event.target.value))}
-                  className="mt-2 h-11 w-full rounded-2xl border border-white/10 bg-black/30 px-4 text-sm text-white outline-none transition focus:border-white/35"
+                  className="mt-2"
                 />
-              </label>
+              </Label>
             </div>
 
-            <button
+            <Button
               type="submit"
-              disabled={isPending}
-              className="h-11 w-full rounded-full bg-white px-5 text-sm font-semibold text-black transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-60"
+              disabled={isPending || isExporting}
+              className="w-full"
             >
-              {isPending ? 'Generating...' : 'Generate slides'}
-            </button>
+              {isPending ? 'Generating…' : 'Generate slides'}
+            </Button>
+            <p
+              id="slide-location-help"
+              className="text-xs leading-5 text-muted-foreground"
+            >
+              City lookup uses Google Maps when configured. Coordinates skip
+              this lookup.{' '}
+              <a
+                href="https://policies.google.com/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4"
+              >
+                Google terms
+              </a>
+              {' · '}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4"
+              >
+                Privacy
+              </a>
+            </p>
           </form>
 
           {result?.success ? (
-            <div className="mt-6 rounded-2xl border border-white/10 bg-black/25 p-4">
-              <div className="text-sm font-medium text-white">
-                {result.offenders.length} offenders with photos and offenses loaded
+            <div className="mt-8" role="status">
+              <div className="text-sm font-medium">
+                {result.offenders.length}{' '}
+                {result.offenders.length === 1 ? 'record' : 'records'} loaded
               </div>
-              <div className="mt-1 text-xs leading-5 text-white/45">
+              <div className="mt-1 text-xs leading-5 text-muted-foreground">
                 {result.locationLabel}
               </div>
+              {result.geocodingProvider === 'google' ? (
+                <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                  Location lookup:{' '}
+                  <a
+                    href="https://maps.google.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    translate="no"
+                    className="inline-block whitespace-nowrap font-normal not-italic tracking-normal text-white"
+                  >
+                    Google Maps
+                  </a>
+                </p>
+              ) : null}
               {result.offenders.length > 0 ? (
-                <button
+                <Button
                   type="button"
-                  disabled={isExporting}
+                  variant="secondary"
+                  disabled={isExporting || isPending}
                   onClick={async () => {
                     setBulkExporting(true);
                     try {
                       await exportAllFrames();
+                    } catch (error) {
+                      console.error('Slide ZIP export failed', error);
+                      setExportError(
+                        'Could not export the ZIP. Please try again.'
+                      );
                     } finally {
                       setBulkExporting(false);
                     }
                   }}
-                  className="mt-4 h-10 w-full rounded-full border border-white/15 bg-white/[0.06] px-4 text-sm font-semibold text-white transition hover:bg-white/[0.1] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="mt-4 w-full"
                 >
-                  {bulkExporting ? 'Exporting...' : 'Download ZIP'}
-                </button>
+                  {bulkExporting ? 'Exporting…' : 'Download ZIP'}
+                </Button>
               ) : null}
             </div>
           ) : null}
 
           {result && !result.success ? (
-            <div className="mt-6 rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-sm leading-6 text-red-100">
+            <p className="mt-6 text-sm leading-6 text-destructive" role="alert">
               {result.error}
-            </div>
+            </p>
+          ) : null}
+          {exportError ? (
+            <p className="mt-6 text-sm leading-6 text-destructive" role="alert">
+              {exportError}
+            </p>
           ) : null}
         </aside>
 
-        <section className="min-w-0">
-          {offenders.length === 0 && !isPending ? (
-            <div className="flex min-h-[540px] items-center justify-center rounded-3xl border border-dashed border-white/10 bg-white/[0.03] p-8 text-center">
+        <section
+          className="min-w-0"
+          aria-label="Slide previews"
+          aria-busy={isPending}
+        >
+          {isPending ? (
+            <p
+              role="status"
+              className="py-20 text-center text-sm text-muted-foreground"
+            >
+              Generating slides…
+            </p>
+          ) : null}
+          {offenders.length === 0 &&
+          !isPending &&
+          (!result || result.success) ? (
+            <div className="flex min-h-64 items-center justify-center py-12 text-center lg:min-h-[440px]">
               <div>
-                <div className="text-2xl font-semibold tracking-[-0.05em]">
-                  No slides generated yet
+                <div className="text-xl font-medium tracking-tight">
+                  {result?.success ? 'No matching records' : 'No slides yet'}
                 </div>
-                <p className="mt-2 max-w-md text-sm leading-6 text-white/50">
-                  Enter a location to preview address-safe offender screenshots
-                  with the App Store CTA.
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {result?.success
+                    ? 'Try another location or a wider radius.'
+                    : 'Enter a location to get started.'}
                 </p>
               </div>
             </div>
@@ -254,39 +333,33 @@ export default function OffenderSlideGenerator() {
 
           <div className="grid gap-8 xl:grid-cols-2">
             {offenders.map((offender, index) => (
-              <article
-                key={offender.id}
-                className="rounded-3xl border border-white/10 bg-white/[0.04] p-4 shadow-2xl shadow-black/30"
-              >
+              <article key={offender.id} className="min-w-0">
                 <div className="flex items-center justify-between gap-4 pb-4">
                   <div className="min-w-0">
-                    <div className="truncate text-sm font-medium text-white">
+                    <div className="truncate text-sm font-medium">
                       {offender.fullName || 'Unknown'}
                     </div>
-                    <div className="text-xs text-white/45">
+                    <div className="text-xs text-muted-foreground">
                       Slide {index + 1} of {offenders.length}
                     </div>
                   </div>
-                  <button
+                  <Button
                     type="button"
-                    disabled={isExporting}
+                    variant="secondary"
+                    size="sm"
+                    disabled={isExporting || isPending}
                     onClick={() => void exportFrame(offender.id, index)}
-                    className="shrink-0 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/[0.1] disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {exportingId === offender.id ? 'Exporting...' : 'PNG'}
-                  </button>
+                    {exportingId === offender.id ? 'Exporting…' : 'PNG'}
+                  </Button>
                 </div>
 
-                <div className="relative h-[640px] w-[360px] overflow-hidden rounded-[28px] bg-black ring-1 ring-white/10">
-                  <div className="absolute left-0 top-0 origin-top-left scale-[0.333333]">
-                    <OffenderSlideFrame
-                      ref={(node) => {
-                        frameRefs.current[offender.id] = node;
-                      }}
-                      offender={offender}
-                    />
-                  </div>
-                </div>
+                <OffenderSlidePreview
+                  offender={offender}
+                  frameRef={(node) => {
+                    frameRefs.current[offender.id] = node;
+                  }}
+                />
               </article>
             ))}
           </div>

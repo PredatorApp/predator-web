@@ -1,16 +1,15 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { StoreHandoff } from '@/components/store-handoff';
-import {
-  detectInAppBrowser,
-  isTikTokInAppBrowser,
-} from '@/lib/in-app-browser';
+import { useWebsitePrivacy } from '@/hooks/use-website-privacy';
+import { privacySafeDownloadUrl } from '@/lib/website-privacy';
+import { useInAppBrowser } from '@/hooks/use-in-app-browser';
 
 function buildRedirectUrl(
   destinationUrl: string,
-  searchParams: URLSearchParams,
+  searchParams: URLSearchParams
 ): string {
   const destination = new URL(destinationUrl);
   const existingKeys = new Set(destination.searchParams.keys());
@@ -34,28 +33,29 @@ export function ShortLinkRedirect({
     () =>
       buildRedirectUrl(
         destinationUrl,
-        new URLSearchParams(searchParams.toString()),
+        new URLSearchParams(searchParams.toString())
       ),
-    [destinationUrl, searchParams],
+    [destinationUrl, searchParams]
   );
-  const [isMeta, setIsMeta] = useState(false);
+  const browser = useInAppBrowser();
+  const privacy = useWebsitePrivacy();
 
   useEffect(() => {
-    const info = detectInAppBrowser(navigator.userAgent);
-
-    if (info.family === 'meta') {
-      setIsMeta(true);
+    if (!privacy.ready || browser === null) return;
+    if (browser.family === 'meta' || browser.family === 'tiktok') {
       return;
     }
 
-    if (isTikTokInAppBrowser(navigator.userAgent)) {
-      return;
-    }
+    window.location.replace(
+      privacySafeDownloadUrl(
+        redirectUrl,
+        navigator.userAgent,
+        privacy.attribution
+      )
+    );
+  }, [redirectUrl, privacy.ready, privacy.attribution, browser]);
 
-    window.location.replace(redirectUrl);
-  }, [redirectUrl]);
-
-  if (isMeta) {
+  if (browser?.family === 'meta') {
     return <StoreHandoff destinationUrl={redirectUrl} />;
   }
 

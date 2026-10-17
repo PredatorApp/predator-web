@@ -15,24 +15,24 @@ describe('resolveGoDestination', () => {
 
   it('allows App Store and Play Store hosts', () => {
     expect(
-      resolveGoDestination('https://apps.apple.com/app/id6753127459'),
+      resolveGoDestination('https://apps.apple.com/app/id6753127459')
     ).toBe('https://apps.apple.com/app/id6753127459');
     expect(
       resolveGoDestination(
-        'https://play.google.com/store/apps/details?id=app.predator',
-      ),
+        'https://play.google.com/store/apps/details?id=app.predator'
+      )
     ).toBe('https://play.google.com/store/apps/details?id=app.predator');
   });
 
   it('rejects non-https and unknown hosts', () => {
     expect(resolveGoDestination('http://predator.onelink.me/RpE0/x')).toBe(
-      APPSFLYER_DEFAULT_ONELINK_URL,
+      APPSFLYER_DEFAULT_ONELINK_URL
     );
     expect(resolveGoDestination('https://evil.example/phish')).toBe(
-      APPSFLYER_DEFAULT_ONELINK_URL,
+      APPSFLYER_DEFAULT_ONELINK_URL
     );
     expect(resolveGoDestination('not-a-url')).toBe(
-      APPSFLYER_DEFAULT_ONELINK_URL,
+      APPSFLYER_DEFAULT_ONELINK_URL
     );
   });
 });

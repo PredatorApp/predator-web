@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { getOneLinkUrl } from '@/lib/onelink-links';
 import { ShortLinkRedirect } from './short-link-redirect';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 const title = 'Predator: Sex Offender Map & Alerts';
 const description = 'Check your area for predators.';
@@ -55,10 +56,15 @@ export default async function ShortLinkPage({ params }: ShortLinkPageProps) {
       </Suspense>
       <noscript>
         <p className="flex min-h-dvh items-center justify-center px-4 text-center text-sm text-white/60">
-          JavaScript is required to open the tracked download link.{' '}
-          <a className="text-white underline" href={destinationUrl}>
-            Continue to Predator.
+          Download Predator directly from the{' '}
+          <a className="text-white underline" href={APP_STORE_URL}>
+            App Store
+          </a>{' '}
+          or{' '}
+          <a className="text-white underline" href={PLAY_STORE_URL}>
+            Google Play
           </a>
+          .
         </p>
       </noscript>
     </main>

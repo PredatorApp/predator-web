@@ -4,8 +4,7 @@ import { APP_STORE_URL } from '@/lib/store-links';
 export const META_ESCAPE_WATCHDOG_MS = 1500;
 
 export type MetaEscapeScheme =
-  | { kind: 'assign'; href: string }
-  | { kind: 'open'; href: string };
+  { kind: 'assign'; href: string } | { kind: 'open'; href: string };
 
 type BuildSchemesArgs = {
   destinationUrl: string;

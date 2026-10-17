@@ -1,0 +1,942 @@
+{
+  "directoryUrl": "https://www.nsopw.gov/all-registries",
+  "reviewedOn": "2026-10-16",
+  "entries": [
+    {
+      "group": "states",
+      "name": "Alabama",
+      "url": "http://www.communitynotification.com/cap_main.php?office=54247",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Alaska",
+      "url": "https://dps.alaska.gov/sorweb/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Arizona",
+      "url": "https://www.azdps.gov/services/public-services-center/sex-offender-compliance",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Arkansas",
+      "url": "https://www.ark.org/offender-search/index.php",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "California",
+      "url": "https://www.meganslaw.ca.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Colorado",
+      "url": "https://www.colorado.gov/apps/cdps/sor/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Connecticut",
+      "url": "http://www.communitynotification.com/cap_office_disclaimer.php?office=54567",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Delaware",
+      "url": "https://sexoffender.dsp.delaware.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "District of Columbia",
+      "url": "https://sexoffender.dc.gov/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Florida",
+      "url": "https://offender.fdle.state.fl.us/offender/sops/search.jsf",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Georgia",
+      "url": "https://state.sor.gbi.ga.gov/sort_public/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Hawaii",
+      "url": "https://sexoffenders.ehawaii.gov:443/coveredoffender/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Idaho",
+      "url": "https://apps.isp.idaho.gov/sor_id/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Illinois",
+      "url": "https://isp.illinois.gov/Sor",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Indiana",
+      "url": "https://www.icrimewatch.net/indiana.php",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Iowa",
+      "url": "https://www.iowasexoffender.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Kansas",
+      "url": "https://www.kansas.gov/kbi/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Kentucky",
+      "url": "http://kspsor.state.ky.us/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Louisiana",
+      "url": "https://www.icrimewatch.net/louisiana.php",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Maine",
+      "url": "https://apps.web.maine.gov/cgi-bin/sor/index.pl",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Maryland",
+      "url": "https://dpscs.maryland.gov/onlineservs/socem/default.shtml",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Massachusetts",
+      "url": "http://www.mass.gov/eopss/agencies/sorb",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Michigan",
+      "url": "https://mspsor.com/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Minnesota - Bureau of Criminal Apprehension",
+      "url": "https://mn.gov/doc/family-visitor/search-individuals-fugitives/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Minnesota - Department of Corrections",
+      "url": "https://mn.gov/doc/family-visitor/search-individuals-fugitives/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Mississippi",
+      "url": "http://state.sor.dps.ms.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Missouri",
+      "url": "https://www.mshp.dps.missouri.gov/CJ38/search.jsp",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Montana",
+      "url": "https://www.dojmt.gov/sexual-or-violent-offender-registry/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Nebraska",
+      "url": "https://sor.nebraska.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Nevada",
+      "url": "https://sexoffenders.nv.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "New Hampshire",
+      "url": "https://business.nh.gov/NSOR/search.aspx",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "New Jersey",
+      "url": "https://njsp.njoag.gov/nj-sex-offender-registry/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "New Mexico",
+      "url": "http://communitynotification.com/nm/newmexico/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "New York",
+      "url": "https://sor.criminaljustice.ny.gov/SomsPUB/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "North Carolina",
+      "url": "https://sexoffender.ncsbi.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "North Dakota",
+      "url": "https://sexoffender.nd.gov/offender/search",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Ohio",
+      "url": "http://www.communitynotification.com/oh/ohio/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Oklahoma",
+      "url": "https://sors.doc.ok.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Oregon",
+      "url": "https://www.oregon.gov/osp/programs/SOR/Pages/default.aspx",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Pennsylvania",
+      "url": "https://www.meganslaw.psp.pa.gov/Home/TermsAndConditions",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Rhode Island",
+      "url": "http://www.sheriffalerts.com/cap_main.php?office=56404",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "South Carolina",
+      "url": "https://scor.sled.sc.gov/ConditionsOfUse.Aspx",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "South Dakota",
+      "url": "https://sor.sd.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Tennessee",
+      "url": "https://www.tn.gov/tbi/general-information/tennessee-sex-offender-registry.html",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Texas",
+      "url": "https://publicsite.dps.texas.gov/SexOffenderRegistry",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Utah",
+      "url": "http://www.communitynotification.com/cap_office_disclaimer.php?office=54438",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Vermont",
+      "url": "https://vcic.vermont.gov/sor",
+      "referencedInDataset": false
+    },
+    {
+      "group": "states",
+      "name": "Virginia",
+      "url": "https://www.vspsor.com/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Washington",
+      "url": "http://www.icrimewatch.net/washington.php",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "West Virginia",
+      "url": "https://apps.wv.gov/StatePolice/SexOffender/Disclaimer?continueToUrl=http%3A%2F%2Fapps.wv.gov%2Fstatepolice%2Fsexoffender",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Wisconsin",
+      "url": "https://appsdoc.wi.gov/public",
+      "referencedInDataset": true
+    },
+    {
+      "group": "states",
+      "name": "Wyoming",
+      "url": "http://www.communitynotification.com/cap_main.php?office=55699",
+      "referencedInDataset": false
+    },
+    {
+      "group": "territories",
+      "name": "American Samoa",
+      "url": "https://americansamoa.nsopw.gov/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "territories",
+      "name": "Guam",
+      "url": "https://sor.guamcourts.gov/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "territories",
+      "name": "Northern Mariana Islands",
+      "url": "https://cnmi.nsopw.gov/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "territories",
+      "name": "Puerto Rico",
+      "url": "https://www.justicia.pr.gov/registros/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "territories",
+      "name": "U.S. Virgin Islands",
+      "url": "https://usvi.nsopw.gov/",
+      "referencedInDataset": false
+    },
+    {
+      "group": "tribes",
+      "name": "Absentee Shawnee Tribe of Oklahoma",
+      "url": "https://astribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Ak-Chin Indian Community",
+      "url": "https://ak-chin.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Alabama-Coushatta Tribes of Texas",
+      "url": "https://actribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Blackfeet Nation",
+      "url": "https://blackfeet.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Bois Forte Band of Chippewa",
+      "url": "https://boisforte.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Cherokee Nation",
+      "url": "https://cherokee.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Cheyenne and Arapaho Tribes of Oklahoma",
+      "url": "https://catribes.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Cheyenne River Sioux Tribe",
+      "url": "https://cheyenneriver.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Chickasaw Nation",
+      "url": "https://chickasaw.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Chippewa Cree Tribe",
+      "url": "https://chippewacree.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Chitimacha Tribe of Louisiana",
+      "url": "https://chitimacha.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Cocopah Tribe",
+      "url": "https://cocopah.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Colorado River Indian Tribe",
+      "url": "https://crit.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Comanche Nation",
+      "url": "https://comanche.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Confederated Tribes and Bands of the Yakama Nation",
+      "url": "https://yakama.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Confederated Tribes of the Colville Reservation",
+      "url": "https://colvilletribes.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Confederated Tribes of the Umatilla Indian Reservation",
+      "url": "https://ctuir.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Confederated Tribes of the Warm Springs Reservation",
+      "url": "https://warmsprings.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Crow Tribe",
+      "url": "https://crownations.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Eastern Band of Cherokee Indians",
+      "url": "https://nc-cherokee.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Eastern Shoshone Tribe of the Wind River Reservation",
+      "url": "https://northernarapaho.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Ely Shoshone Tribe",
+      "url": "https://elyshoshonetribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Flandreau Santee Sioux Tribe",
+      "url": "https://fsst.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Fort Belknap Indian Community",
+      "url": "https://ftbelknap.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Fort McDowell Yavapai Nation",
+      "url": "https://ftmcdowell.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Fort Mojave Indian Tribe",
+      "url": "https://mojaveindiantribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Fort Peck Assiniboine and Sioux Tribes",
+      "url": "https://fortpecktribes.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Gila River Indian Community",
+      "url": "https://gric.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Grand Traverse Band of Ottawa and Chippewa Indians",
+      "url": "https://gtb.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Havasupai Tribe",
+      "url": "https://havasupai.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Hopi Tribe",
+      "url": "https://hopi.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Hualapai Tribe",
+      "url": "https://hualapai.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Iowa Tribe of Oklahoma",
+      "url": "https://iowanation.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Jicarilla Apache Nation",
+      "url": "https://jicarilla.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Kaibab Paiute Tribe",
+      "url": "https://kaibabpaiute.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Kewa Pueblo",
+      "url": "https://kewapueblo.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Keweenaw Bay Indian Community",
+      "url": "https://kbic.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Kickapoo Tribe of Oklahoma",
+      "url": "https://kickapoo.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Lower Elwha Klallam Tribe",
+      "url": "https://elwha.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Lummi Nation",
+      "url": "https://lummi.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Makah Indian Tribe",
+      "url": "https://makah.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Mashantucket Pequot Tribal Nation",
+      "url": "https://mptn.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Menominee Indian Tribe of Wisconsin",
+      "url": "http://metp.menominee-nsn.gov/SORN/Disclaimer.aspx",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Mescalero Apache Tribe",
+      "url": "https://mescaleroapache.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Metlakatla Indian Community",
+      "url": "https://metlakatla.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Miami Tribe of Oklahoma",
+      "url": "https://miamination.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Mississippi Band of Choctaw Indians",
+      "url": "https://choctaw.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Muscogee (Creek) Nation",
+      "url": "https://muscogee.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Navajo Nation",
+      "url": "https://navajo.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Nez Perce Tribe",
+      "url": "https://nezperce.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Nisqually Indian Tribe",
+      "url": "https://nisqually.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Nooksack Indian Tribe",
+      "url": "https://nooksack.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Northern Arapaho Tribe of the Wind River Reservation",
+      "url": "https://northernarapaho.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Northern Cheyenne Tribe",
+      "url": "https://northerncheyenne.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Oglala Sioux Tribe",
+      "url": "https://oglala.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Ohkay Owingeh Tribe",
+      "url": "https://ohkayowingeh.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Omaha Nation",
+      "url": "https://omaha.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Osage Nation",
+      "url": "https://osage.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Otoe-Missouria Tribe",
+      "url": "https://omtribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pascua Yaqui Tribe",
+      "url": "https://pascuayaqui.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pawnee Nation of Oklahoma",
+      "url": "https://pawneenation.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Prairie Band Potawatomi Nation",
+      "url": "https://pbpnation.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pueblo of Acoma",
+      "url": "https://puebloofacoma.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pueblo of Isleta",
+      "url": "https://isleta.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pueblo of Jemez",
+      "url": "https://jemez.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pueblo of Laguna",
+      "url": "https://laguna.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pueblo of Santa Ana",
+      "url": "https://santaana.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pueblo of Zuni",
+      "url": "https://zuni.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Puyallup Tribe of Indians",
+      "url": "https://puyallup-tribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Pyramid Lake Paiute Tribe of Nevada",
+      "url": "https://plpt.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Quapaw Tribe of Oklahoma",
+      "url": "https://quapaw.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Quinault Indian Nation",
+      "url": "https://quinault.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Red Lake Band of Chippewa Indians",
+      "url": "https://redlake.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Reno-Sparks Indian Colony",
+      "url": "https://rsic.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Rosebud Sioux Tribe",
+      "url": "https://rosebud.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Sac and Fox Tribe of the Mississippi in Iowa (Meskwaki Nation)",
+      "url": "https://meskwaki.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Salt River Pima-Maricopa Indian Community",
+      "url": "https://srpmic.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "San Carlos Apache Tribe",
+      "url": "https://scat.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Sault Sainte Marie Tribe of Chippewa Indians of Michigan",
+      "url": "https://saulttribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Seminole Nation of Oklahoma",
+      "url": "https://seminolenation.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Shoshone-Bannock Tribes",
+      "url": "https://sbtribes.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Shoshone-Paiute Tribes",
+      "url": "https://shoshonepaiute.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Sisseton Wahpeton Oyate",
+      "url": "https://swo.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Spirit Lake Nation",
+      "url": "https://spiritlake.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Spokane Tribe of Indians",
+      "url": "https://spokanetribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Standing Rock Sioux Tribe",
+      "url": "https://srst.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Three Affiliated Tribes",
+      "url": "https://mhanation.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Tohono O'odham Nation",
+      "url": "https://tonation.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Tonto Apache Tribe",
+      "url": "https://tontoapache.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Tulalip Tribes",
+      "url": "https://tulalip.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Turtle Mountain Band of Chippewa Indians",
+      "url": "https://tmbci.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "United Keetoowah Band of Cherokee Indians",
+      "url": "https://unitedkeetoowahband.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Ute Indian Tribe",
+      "url": "https://utetribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Washoe Tribe of Nevada and California",
+      "url": "https://washoetribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "White Mountain Apache Tribe",
+      "url": "https://wmat.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Winnebago Tribe of Nebraska",
+      "url": "https://winnebagotribe.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Yankton Sioux Tribe",
+      "url": "https://yankton.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Yavapai-Apache Nation",
+      "url": "https://yavapaiapache.nsopw.gov/",
+      "referencedInDataset": true
+    },
+    {
+      "group": "tribes",
+      "name": "Yavapai-Prescott Indian Tribe",
+      "url": "https://ypit.nsopw.gov/",
+      "referencedInDataset": true
+    }
+  ]
+}

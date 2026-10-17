@@ -1,13 +1,14 @@
 import type { NextConfig } from 'next';
 
-const domains = process.env.NODE_ENV === 'development' ? ['localhost'] : [];
-
 const nextConfig: NextConfig = {
-  images: {
-    domains,
-  },
+  agentRules: false,
   async redirects() {
     return [
+      {
+        source: '/sources',
+        destination: '/terms#public-records',
+        permanent: true,
+      },
       {
         source: '/discord',
         destination: 'https://discord.com/invite/EMd9ARMHex',

@@ -13,13 +13,13 @@ const APP_STORE = 'https://apps.apple.com/app/id6753127459';
 describe('meta escape URL builders', () => {
   it('builds Instagram extbrowser URL', () => {
     expect(buildInstagramExtBrowserUrl(DESTINATION)).toBe(
-      `instagram://extbrowser/?url=${encodeURIComponent(DESTINATION)}`,
+      `instagram://extbrowser/?url=${encodeURIComponent(DESTINATION)}`
     );
   });
 
   it('builds itms-apps URL from App Store HTTPS URL', () => {
     expect(buildItmsAppsUrl(APP_STORE)).toBe(
-      'itms-apps://apps.apple.com/app/id6753127459',
+      'itms-apps://apps.apple.com/app/id6753127459'
     );
   });
 
@@ -29,7 +29,7 @@ describe('meta escape URL builders', () => {
 
   it('builds Android intent URL', () => {
     expect(buildAndroidIntentUrl(DESTINATION)).toBe(
-      `intent://predator.onelink.me/RpE0/ig-campaign#Intent;scheme=https;S.browser_fallback_url=${encodeURIComponent(DESTINATION)};end`,
+      `intent://predator.onelink.me/RpE0/ig-campaign#Intent;scheme=https;S.browser_fallback_url=${encodeURIComponent(DESTINATION)};end`
     );
   });
 });
@@ -42,7 +42,7 @@ describe('buildMetaEscapeSchemes', () => {
         app: 'instagram',
         os: 'ios',
         appStoreUrl: APP_STORE,
-      }),
+      })
     ).toEqual([
       {
         kind: 'assign',
@@ -60,7 +60,7 @@ describe('buildMetaEscapeSchemes', () => {
         app: 'threads',
         os: 'ios',
         appStoreUrl: APP_STORE,
-      }),
+      })
     ).toHaveLength(2);
   });
 
@@ -70,20 +70,16 @@ describe('buildMetaEscapeSchemes', () => {
         destinationUrl: DESTINATION,
         app: 'facebook',
         os: 'ios',
-      }),
-    ).toEqual([
-      { kind: 'open', href: buildSafariEscapeUrl(DESTINATION) },
-    ]);
+      })
+    ).toEqual([{ kind: 'open', href: buildSafariEscapeUrl(DESTINATION) }]);
 
     expect(
       buildMetaEscapeSchemes({
         destinationUrl: DESTINATION,
         app: 'messenger',
         os: 'ios',
-      }),
-    ).toEqual([
-      { kind: 'open', href: buildSafariEscapeUrl(DESTINATION) },
-    ]);
+      })
+    ).toEqual([{ kind: 'open', href: buildSafariEscapeUrl(DESTINATION) }]);
   });
 
   it('returns Android intent for Meta apps on Android', () => {
@@ -92,10 +88,8 @@ describe('buildMetaEscapeSchemes', () => {
         destinationUrl: DESTINATION,
         app: 'instagram',
         os: 'android',
-      }),
-    ).toEqual([
-      { kind: 'assign', href: buildAndroidIntentUrl(DESTINATION) },
-    ]);
+      })
+    ).toEqual([{ kind: 'assign', href: buildAndroidIntentUrl(DESTINATION) }]);
   });
 
   it('returns no schemes for unsupported OS', () => {
@@ -104,7 +98,7 @@ describe('buildMetaEscapeSchemes', () => {
         destinationUrl: DESTINATION,
         app: 'instagram',
         os: 'other',
-      }),
+      })
     ).toEqual([]);
   });
 });

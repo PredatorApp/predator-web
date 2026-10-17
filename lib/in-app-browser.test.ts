@@ -87,9 +87,7 @@ describe('detectInAppBrowser', () => {
 describe('buildGoHandoffPath', () => {
   it('encodes the destination URL', () => {
     expect(
-      buildGoHandoffPath('https://predator.onelink.me/RpE0/campaign'),
-    ).toBe(
-      '/go?to=https%3A%2F%2Fpredator.onelink.me%2FRpE0%2Fcampaign',
-    );
+      buildGoHandoffPath('https://predator.onelink.me/RpE0/campaign')
+    ).toBe('/go?to=https%3A%2F%2Fpredator.onelink.me%2FRpE0%2Fcampaign');
   });
 });

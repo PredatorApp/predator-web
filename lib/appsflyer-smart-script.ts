@@ -1,3 +1,5 @@
+import { readWebsitePrivacy } from '@/lib/website-privacy';
+
 export const APPSFLYER_SMART_SCRIPT_SRC =
   'https://onelinksmartscript.appsflyersdk.com/onelink-smart-script-latest.js';
 
@@ -6,8 +8,7 @@ export const APPSFLYER_SMART_SCRIPT_READY_EVENT =
 
 const oneLinkURL = 'https://predator.onelink.me/RpE0';
 
-export const APPSFLYER_DEFAULT_ONELINK_URL =
-  `${oneLinkURL}?pid=website&c=website&af_channel=website&af_ss_ui=true`;
+export const APPSFLYER_DEFAULT_ONELINK_URL = `${oneLinkURL}?pid=website&c=website&af_channel=website&af_ss_ui=true`;
 
 type AppsFlyerParameter = {
   keys?: string[];
@@ -37,14 +38,14 @@ declare global {
   interface Window {
     AF_SMART_SCRIPT?: {
       generateOneLinkURL: (
-        args: AppsFlyerGenerateOneLinkArgs,
+        args: AppsFlyerGenerateOneLinkArgs
       ) => AppsFlyerSmartScriptResult | null;
     };
   }
 }
 
 export function generateAppsFlyerOneLinkURL(): string | null {
-  if (typeof window === 'undefined') {
+  if (typeof window === 'undefined' || !readWebsitePrivacy().attribution) {
     return null;
   }
 

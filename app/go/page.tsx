@@ -21,7 +21,9 @@ export default async function GoPage({ searchParams }: GoPageProps) {
   const rawTo = Array.isArray(params.to) ? params.to[0] : params.to;
 
   return (
-    <Suspense fallback={<div className="min-h-dvh bg-background" aria-hidden />}>
+    <Suspense
+      fallback={<div className="min-h-dvh bg-background" aria-hidden />}
+    >
       <GoHandoff to={rawTo} />
     </Suspense>
   );

@@ -4,19 +4,12 @@ import Image from 'next/image';
 import { forwardRef } from 'react';
 import type { OffenderSlideOffender } from '../actions';
 
-const APP_ICON_URL =
-  'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/4d/4f/504d4fe9-322c-5ae8-bebe-12404d237ccd/Placeholder.mill/400x400bb-75.webp';
-
 interface OffenderSlideFrameProps {
   offender: OffenderSlideOffender;
 }
 
 function getPhotoSrc(imageUrl: string | null) {
   if (!imageUrl) return null;
-  return `/tools/offender-slides/image?url=${encodeURIComponent(imageUrl)}`;
-}
-
-function getProxiedImageSrc(imageUrl: string) {
   return `/tools/offender-slides/image?url=${encodeURIComponent(imageUrl)}`;
 }
 
@@ -222,7 +215,7 @@ const OffenderSlideFrame = forwardRef<HTMLDivElement, OffenderSlideFrameProps>(
           <div className="flex flex-col items-center justify-center">
             <div className="flex h-[140px] w-[140px] items-center justify-center overflow-hidden rounded-[30px] border border-white/20 bg-black shadow-[0_24px_80px_rgba(0,0,0,0.65)]">
               <Image
-                src={getProxiedImageSrc(APP_ICON_URL)}
+                src="/slide-app-icon.webp"
                 alt="Predator"
                 width={140}
                 height={140}
