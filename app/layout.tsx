@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 const siteUrl = 'https://predator.app';
-const siteTitle = 'Predator: Sex Offender Map';
+const siteTitle = 'Predator: Sex Offender Map & Alerts';
 const siteDescription =
   'Explore public sex offender registry information with maps, name searches, and record details.';
 
